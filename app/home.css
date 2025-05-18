@@ -1,0 +1,49 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary), var(--foreground));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.featured-categories {
+  padding: 20px 0;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 0 60px;
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    gap: 40px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

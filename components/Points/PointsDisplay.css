@@ -1,0 +1,80 @@
+.points-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--card-bg);
+  border-radius: 30px;
+  padding: 8px 15px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.points-display:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--shadow);
+}
+
+.points-display.animate {
+  animation: pulse 1s ease;
+}
+
+.points-icon {
+  font-size: 1.2rem;
+}
+
+.points-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.points-value {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.points-label {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Size variations */
+.points-display.small .points-icon {
+  font-size: 1rem;
+}
+
+.points-display.small .points-value {
+  font-size: 0.9rem;
+}
+
+.points-display.small .points-label {
+  font-size: 0.6rem;
+}
+
+.points-display.large {
+  padding: 10px 20px;
+}
+
+.points-display.large .points-icon {
+  font-size: 1.5rem;
+}
+
+.points-display.large .points-value {
+  font-size: 1.3rem;
+}
+
+.points-display.large .points-label {
+  font-size: 0.8rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,7 @@
+# Netlify redirects file
+
+# Redirect default Netlify subdomain to primary domain
+https://cardverse.netlify.app/* https://cardverse.com/:splat 301!
+
+# Handle client-side routing
+/* /index.html 200

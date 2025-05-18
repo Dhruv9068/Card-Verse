@@ -1,0 +1,166 @@
+/* Enhanced custom cursor styles */
+body {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+.cursor-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  transition: width 0.2s, height 0.2s, background-color 0.3s;
+  box-shadow: 0 0 10px var(--primary); /* Add glow effect */
+}
+
+.cursor-outline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  transition: width 0.2s, height 0.2s, border-color 0.3s;
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5); /* Add glow effect */
+}
+
+.cursor-trail {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  opacity: 0.7;
+  transition: opacity 0.5s;
+  box-shadow: 0 0 8px var(--secondary); /* Add glow effect */
+}
+
+/* Cursor states */
+.custom-cursor.hover .cursor-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--secondary);
+}
+
+.custom-cursor.hover .cursor-outline {
+  width: 40px;
+  height: 40px;
+  border-color: var(--secondary);
+}
+
+.custom-cursor.click .cursor-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+}
+
+.custom-cursor.click .cursor-outline {
+  width: 50px;
+  height: 50px;
+  border-color: var(--accent);
+}
+
+/* Theme-specific cursor colors */
+[data-color-theme="purple"] .cursor-dot {
+  background-color: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6;
+}
+
+[data-color-theme="purple"] .cursor-outline {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+[data-color-theme="purple"] .cursor-trail {
+  background-color: #ec4899;
+  box-shadow: 0 0 8px #ec4899;
+}
+
+[data-color-theme="green"] .cursor-dot {
+  background-color: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+[data-color-theme="green"] .cursor-outline {
+  border-color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+[data-color-theme="green"] .cursor-trail {
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+[data-color-theme="blue"] .cursor-dot {
+  background-color: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+[data-color-theme="blue"] .cursor-outline {
+  border-color: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+[data-color-theme="blue"] .cursor-trail {
+  background-color: #06b6d4;
+  box-shadow: 0 0 8px #06b6d4;
+}
+
+[data-color-theme="red"] .cursor-dot {
+  background-color: #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+}
+
+[data-color-theme="red"] .cursor-outline {
+  border-color: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+[data-color-theme="red"] .cursor-trail {
+  background-color: #f97316;
+  box-shadow: 0 0 8px #f97316;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .custom-cursor {
+  mix-blend-mode: normal;
+}
+
+/* Add sparkle effect on click */
+@keyframes sparkle {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.cursor-sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  pointer-events: none;
+  z-index: 9998;
+  animation: sparkle 0.8s forwards;
+}

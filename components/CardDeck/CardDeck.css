@@ -1,0 +1,101 @@
+.card-deck-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.card-deck {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1000px;
+}
+
+.card-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.card-wrapper.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-counter {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 180, 216, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.emoji-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 24px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.swipe-instructions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+}
+
+.swipe-instruction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-instruction:hover {
+  opacity: 1;
+}
+
+.instruction-icon {
+  font-size: 1.2rem;
+}
+
+.instruction-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .swipe-instructions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

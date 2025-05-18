@@ -1,0 +1,349 @@
+.collection-detail-page {
+  padding: 20px 0;
+}
+
+.collection-header {
+  display: grid;
+  grid-template-columns: 300px 1fr auto;
+  gap: 30px;
+  margin-bottom: 40px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.collection-cover {
+  height: 250px;
+  overflow: hidden;
+}
+
+.collection-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-info {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-name {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.collection-description {
+  font-size: 1.1rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.collection-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-count {
+  font-size: 1rem;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.collection-actions {
+  padding: 30px 30px 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.collection-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.collection-name-input {
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+.collection-description-input {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  min-height: 100px;
+  resize: vertical;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  background-color: var(--background);
+  color: var(--foreground);
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: var(--card-border);
+  transform: translateY(-2px);
+}
+
+.edit-button {
+  padding: 8px 16px;
+  background-color: var(--background);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: var(--primary-light);
+  color: white;
+  border-color: var(--primary-light);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 1.5px;
+}
+
+.collection-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.collection-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--shadow);
+}
+
+.card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.collection-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--foreground);
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card-category {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.empty-collection {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.empty-collection p {
+  margin-bottom: 20px;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.explore-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 180, 216, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.error-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.error-state h2 {
+  color: var(--error);
+  margin-bottom: 10px;
+}
+
+.error-state p {
+  margin-bottom: 20px;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+}
+
+@media (max-width: 992px) {
+  .collection-header {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-cover {
+    height: 200px;
+  }
+
+  .collection-info {
+    padding: 20px;
+  }
+
+  .collection-actions {
+    padding: 0 20px 20px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .collection-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .collection-name {
+    font-size: 2rem;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,58 @@
+.points-history {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease;
+}
+
+.transaction-item:hover {
+  transform: translateY(-2px);
+}
+
+.transaction-info {
+  flex: 1;
+}
+
+.transaction-description {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.transaction-time {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.transaction-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.transaction-amount.positive {
+  color: var(--success);
+}
+
+.transaction-amount.negative {
+  color: var(--error);
+}
+
+.no-transactions {
+  text-align: center;
+  padding: 20px;
+  color: var(--foreground);
+  opacity: 0.7;
+}

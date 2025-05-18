@@ -1,0 +1,108 @@
+.animated-quotes-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--background) 0%, var(--card-bg) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-quotes-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--primary-rgb), 0.05) 25%,
+    rgba(var(--secondary-rgb), 0.05) 50%,
+    rgba(var(--accent-rgb), 0.05) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: glowingEffect 15s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glowingEffect {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+.quotes-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.quote {
+  text-align: center;
+  position: relative;
+  padding: 30px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.quote.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.quote.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-mark {
+  font-size: 6rem;
+  line-height: 0;
+  color: var(--primary);
+  opacity: 0.2;
+  position: absolute;
+}
+
+.quote-mark.start {
+  top: 30px;
+  left: 0;
+}
+
+.quote-mark.end {
+  bottom: 60px;
+  right: 0;
+}
+
+.quote-text {
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: var(--foreground);
+}
+
+.quote-author {
+  font-size: 1.2rem;
+  color: var(--foreground-muted);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .quote-text {
+    font-size: 1.5rem;
+  }
+
+  .quote-mark {
+    font-size: 4rem;
+  }
+
+  .quote-author {
+    font-size: 1rem;
+  }
+}

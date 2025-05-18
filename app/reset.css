@@ -1,0 +1,300 @@
+/* Base reset and variables */
+:root {
+  /* Default theme colors - teal/orange palette */
+  --background: #f5f7fa;
+  --foreground: #2d3748;
+  --primary: #00b4d8;
+  --primary-rgb: 0, 180, 216;
+  --primary-light: #90e0ef;
+  --secondary: #fb8500;
+  --secondary-rgb: 251, 133, 0;
+  --accent: #06d6a0;
+  --accent-rgb: 6, 214, 160;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.05);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --shadow: rgba(0, 0, 0, 0.05);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Font variables */
+  --font-heading: "Calibri", "Segoe UI", Roboto, sans-serif;
+  --font-body: "Calibri", "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing and sizing */
+  --header-height: 70px;
+  --container-width: 1200px;
+  --card-width: 340px;
+  --card-height: 420px;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+/* Purple theme */
+[data-color-theme="purple"] {
+  --primary: #8b5cf6;
+  --primary-rgb: 139, 92, 246;
+  --primary-light: #c4b5fd;
+  --secondary: #ec4899;
+  --secondary-rgb: 236, 72, 153;
+  --accent: #8b5cf6;
+  --accent-rgb: 139, 92, 246;
+}
+
+/* Green theme */
+[data-color-theme="green"] {
+  --primary: #10b981;
+  --primary-rgb: 16, 185, 129;
+  --primary-light: #6ee7b7;
+  --secondary: #f59e0b;
+  --secondary-rgb: 245, 158, 11;
+  --accent: #10b981;
+  --accent-rgb: 16, 185, 129;
+}
+
+/* Blue theme */
+[data-color-theme="blue"] {
+  --primary: #3b82f6;
+  --primary-rgb: 59, 130, 246;
+  --primary-light: #93c5fd;
+  --secondary: #06b6d4;
+  --secondary-rgb: 6, 182, 212;
+  --accent: #3b82f6;
+  --accent-rgb: 59, 130, 246;
+}
+
+/* Red theme */
+[data-color-theme="red"] {
+  --primary: #ef4444;
+  --primary-rgb: 239, 68, 68;
+  --primary-light: #fca5a5;
+  --secondary: #f97316;
+  --secondary-rgb: 249, 115, 22;
+  --accent: #ef4444;
+  --accent-rgb: 239, 68, 68;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --background: #0f1117;
+  --foreground: #f8f9fc;
+  --card-bg: #1a1c25;
+  --card-border: rgba(255, 255, 255, 0.05);
+  --nav-bg: rgba(15, 17, 23, 0.8);
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  position: relative; /* Add this to contain absolutely positioned elements */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  flex: 1; /* Make app container take up all available space */
+}
+
+.main-content {
+  padding: calc(var(--header-height) + 70px) 20px 20px;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  flex: 1; /* Make main content take up all available space */
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 180, 216, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 180, 216, 0.5);
+  }
+}
+
+/* Utility classes */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease forwards;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.global-search-container {
+  width: 100%;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 10px var(--shadow);
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+    --card-width: 300px;
+    --card-height: 450px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

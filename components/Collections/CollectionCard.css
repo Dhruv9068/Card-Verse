@@ -1,0 +1,71 @@
+/* Collection Card Component Styles */
+
+.collection-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect */
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--shadow);
+}
+
+.collection-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom effect on hover */
+.collection-card:hover .collection-image img {
+  transform: scale(1.05);
+}
+
+.card-count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.collection-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--foreground);
+}
+
+.collection-description {
+  font-size: 0.9rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  flex-grow: 1;
+}
+
+/* TODO: Add styles for empty state */
