@@ -16,7 +16,7 @@ import "./custom-cursor.css"
 export const metadata = {
   title: "CardVerse | Interactive Card Experience",
   description: "A feature-rich interactive card experience with voice navigation",
-  generator: 'v0.dev'
+  
 }
 
 export default function RootLayout({
