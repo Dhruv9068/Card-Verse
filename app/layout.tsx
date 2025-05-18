@@ -16,7 +16,7 @@ import "./custom-cursor.css"
 export const metadata = {
   title: "CardVerse | Interactive Card Experience",
   description: "A feature-rich interactive card experience with voice navigation",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -26,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
         <ThemeProvider>
           <PageTransition>
@@ -40,11 +43,10 @@ export default function RootLayout({
               </div>
               <VoiceAssistant />
               <main className="main-content">{children}</main>
-            
               <ChatbotWidget />
               <NotificationSystem />
               <CustomCursor />
-                <Footer />
+              <Footer />
             </div>
           </PageTransition>
         </ThemeProvider>
