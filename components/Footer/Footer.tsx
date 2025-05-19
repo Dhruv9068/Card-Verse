@@ -11,12 +11,9 @@ export default function Footer() {
           <div className="footer-section">
             <h3 className="footer-title">CardVerse</h3>
             <p className="footer-description">
-              An award-winning interactive card experience platform. Explore, collect, and share your favorite cards.
+             CardVerse is a card-based recommendation platform for exploring, collecting, and organizing knowledge interactively.
             </p>
-            <div className="footer-award">
-              <span className="award-icon">🏆</span>
-              <span className="award-text">International Hackathon Winner 2023</span>
-            </div>
+           
           </div>
 
           <div className="footer-section">
@@ -78,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p className="copyright">© {currentYear} CardVerse. All rights reserved.</p>
+         
           <p className="credits">Designed and Developed by Dhruv Chaturvedi</p>
         </div>
       </div>
